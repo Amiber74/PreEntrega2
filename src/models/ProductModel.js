@@ -7,7 +7,6 @@ const productSchema = new mongoose.Schema ({
     id: {
         type:Number,
         required:true,
-        index:true
     },
     tittle: {
         type:String,
@@ -24,10 +23,12 @@ const productSchema = new mongoose.Schema ({
     price: {
         type:Number,
         required:true,
+        index:true
     },
     status: {
         type:Boolean,
         required:true,
+        index:true
     },
     stock: {
         type:Number,

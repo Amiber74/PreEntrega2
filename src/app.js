@@ -3,8 +3,9 @@ import mongoose from 'mongoose'
 import __dirname from './utils/dirnameUtils.js'
 import handlebars from 'express-handlebars'
 import ProductRouter from './routes/ProductRouter.js'
+import CartRouter from './routes/CartRouter.js'
 
-const uri = 'mongodb+srv://rojasfacundo2002:rojasfacundo2002@cluster0.esne0dt.mongodb.net/PreEntrega2?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://rojasfacundo2002:coderhouse2023@cluster0.esne0dt.mongodb.net/PreEntrega2?retryWrites=true&w=majority'
 mongoose.connect(uri)
 
 
@@ -24,3 +25,6 @@ app.set('view engine','handlebars')
 
 app.use('/',ProductRouter)
 
+app.listen ('8080', ()=>{
+    console.log("Servidor levantado en el puerto 8080")
+})

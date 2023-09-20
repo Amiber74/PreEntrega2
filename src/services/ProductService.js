@@ -13,6 +13,16 @@ class ProductService {
         }
     }
 
+    async getOneProduct (uid){
+
+        try{    
+            const result = await ProductModel.findOne({_id:uid})
+        }catch(e){
+            console.error(e.message)
+        }
+
+    }
+
     async CreateProduct (prod){
 
         const {id, tittle, description, code, price, status, stock, thumbnails} = prod
@@ -72,4 +82,4 @@ class ProductService {
 
 }
 
-export default ProductService
+export {ProductService}

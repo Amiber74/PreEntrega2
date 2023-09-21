@@ -1,6 +1,7 @@
 import ProductModel from '../models/ProductModel.js'
 
 
+
 class ProductService {
 
     async getAllProducts(){
@@ -15,8 +16,11 @@ class ProductService {
 
     async getOneProduct (uid){
 
+        const Id = parseInt(uid)
+
         try{    
-            const result = await ProductModel.findOne({_id:uid})
+            const result = await ProductModel.find({id:Id})
+            return result
         }catch(e){
             console.error(e.message)
         }

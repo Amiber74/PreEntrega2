@@ -1,5 +1,8 @@
 import express from "express"
 import ProductModel from '../models/ProductModel.js'
+import { ProductService } from "../services/ProductService.js"
+
+const ServiceProd = new ProductService()
 
 const router = express.Router()
 
@@ -31,5 +34,16 @@ router.get('/', async (req, res)=>{
     res.send(ResultMod)
 })
 
+router.get('/:pid', async(req, res) =>{
+    const {pid}= req.params
+    try{
+
+        const result = await ServiceProd.getOneProduct(pid)
+        res.send(result)
+    } catch(e){
+        console.error(e.message)
+    }
+
+})
 
 export default router

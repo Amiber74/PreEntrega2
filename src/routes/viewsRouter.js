@@ -10,14 +10,13 @@ router.get('/', async (req, res)=>{
         page=1
     }
 
-    let result = await productModel.paginate({}, {page, limit:3, lean:true})
+    let result = await productModel.paginate({}, {page, limit:5, lean:true})
 
     result.prevLink = result.hasPrevPage ? `http://localhost:8080/products?page=${result.prevPage}`: ''
     result.nextLink = result.hasNextPage ? `http://localhost:8080/products?page=${result.nextPage}`: ''
     result.isValid = !( page <=0 || page >result.totalPages)
     result.title= 'Productos: '
     result.style = 'index.css'
-
     res.render('index', result)
 })
 

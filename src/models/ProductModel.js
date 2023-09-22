@@ -5,7 +5,7 @@ const productCollection ='Products'
 
 const productSchema = new mongoose.Schema ({
     id: {
-        type:Number,
+        type:String,
         required:true,
     },
     tittle: {

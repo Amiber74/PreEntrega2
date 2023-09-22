@@ -16,7 +16,7 @@ class ProductService {
 
     async getOneProduct (uid){
 
-        const Id = parseInt(uid)
+        const Id = String(uid)
 
         try{    
             const result = await ProductModel.find({id:Id})

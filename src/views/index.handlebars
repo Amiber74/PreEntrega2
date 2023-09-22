@@ -6,6 +6,9 @@
                 <p>Nombre: {{this.title}} &nbsp;</p>
                 <p>Precio: {{this.price}}&nbsp;</p>
                 <p>Descripcion: {{this.description}}&nbsp;</p>
+                <form action="http://localhost:8080/api/carts/151/product/{{this.id}}" >
+                    <input type="submit" value="Enviar">
+                </form>
             </div>
             <br/>
         {{/each}}
